@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140308105017) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
