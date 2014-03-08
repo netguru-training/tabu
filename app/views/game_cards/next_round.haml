@@ -1,0 +1,7 @@
+%h1= game_card.card.title
+%ul 
+  - game_card.card.words.each do |word|
+    %li= word.value
+
+%button= link_to "Good", '#'
+%button= link_to "Bad", '#'
