@@ -1,2 +1,5 @@
-%h1="Witamy w aplikacji Tabu"
-= render partial: "games/form", locals: { game: game }
+.container
+  .row
+    .col-lg-6.col-lg-offset-3.panel.panel-default
+      %h1.text-center="Witamy w aplikacji Tabu"
+      = render partial: "games/form", locals: { game: game }
