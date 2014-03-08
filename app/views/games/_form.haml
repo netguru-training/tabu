@@ -1,0 +1,11 @@
+= form_for game do |f|
+  = f.label :name, "Game Name:"
+  = f.text_field :name
+  %br/ 
+  = f.label :team1_name, "Team#1:"
+  = f.text_field :team1_name
+  %br/ 
+  = f.label :team2_name, "Team#2:"
+  = f.text_field :team2_name
+  %br/
+  = f.submit "Start Game!"
