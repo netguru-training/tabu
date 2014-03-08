@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308134615) do
+ActiveRecord::Schema.define(version: 20140308135203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20140308134615) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "forbidden_words", force: true do |t|
+    t.integer  "card_id"
+    t.integer  "word_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forbidden_words", ["card_id"], name: "index_forbidden_words_on_card_id", using: :btree
+  add_index "forbidden_words", ["word_id"], name: "index_forbidden_words_on_word_id", using: :btree
 
   create_table "game_cards", force: true do |t|
     t.integer  "card_id"
