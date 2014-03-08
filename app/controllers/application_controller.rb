@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
+
+  helper_method :current_game
+  def current_game
+  	Game.first
+  end
 end
