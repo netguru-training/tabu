@@ -14,11 +14,14 @@ class GamesController < ApplicationController
     else
       render :new
     end
-    #binding.pry
   end
 
   def show
     
+  end
+
+  def results
+  	
   end
 
   private
