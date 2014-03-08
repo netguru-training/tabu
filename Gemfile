@@ -12,3 +12,4 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
+gem 'decent_exposure'
