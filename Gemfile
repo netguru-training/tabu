@@ -13,3 +13,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
 gem 'decent_exposure'
+group :development do 
+  gem 'pry'
+end
