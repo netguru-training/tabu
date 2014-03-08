@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
   def current_game
   	Game.first
   end
+  def current_team
+    Team.first
+  end
 end
