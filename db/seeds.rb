@@ -44,3 +44,6 @@ cards.each do |card|
   db_card = Card.where(title: card).first_or_create
   db_card.words << Word.order('random()').first(5)
 end
+
+team1 = Team.create(name: "Team One")
+10.times { GameCard.create(team: team1, result: [-1, 0, 1].sample) }
