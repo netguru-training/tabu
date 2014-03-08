@@ -21,7 +21,6 @@ class GamesController < ApplicationController
   end
 
   def results
-  	
   end
 
   private
