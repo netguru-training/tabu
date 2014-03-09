@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   expose :game, attributes: :game_attributes
+  
   def create
 
     team1 = Team.new name: params[:game][:team1_name]
@@ -10,7 +11,7 @@ class GamesController < ApplicationController
       game.update team1_id: team1.id, team2_id: team2.id
 
       set_current_game game
-      redirect_to game
+      redirect_to next_round_path
     else
       render :new
     end
