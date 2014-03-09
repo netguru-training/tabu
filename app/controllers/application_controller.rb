@@ -8,9 +8,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_game
   def current_game
-  	Game.first
+  	Game.find session[:current_game_id]
   end
+
   def current_team
-    Team.first
+    Team.find session[:current_team_id]
+  end
+
+  def current_team=(team)
+    session[:current_team_id] = team.id
+  end
+
+  def current_game=(game)
+    session[:current_game_id] = game.id
   end
 end
