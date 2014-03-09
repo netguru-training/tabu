@@ -6,13 +6,21 @@ class CardsController < ApplicationController
   end
 
   def create
-    binding.pry
+    if card.save
+      redirect_to card
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def destroy
+  end
+
+  def show
+    
   end
 
   private
