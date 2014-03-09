@@ -1,12 +1,19 @@
-
-.col-lg-6.col-lg-offset-3
-  %h4
-    = "Current team: #{game_card.team.name}"
-  .card
-    %h2.title= game_card.card.title
-    %ul 
-      - game_card.card.words.each do |word|
-        %li= word.value
-    .result-btn-group
-      = link_to "Good", next_round_path(result: 1), class: "btn btn-success", method: :post
-      = link_to "Bad", next_round_path(result: -1), class: "btn btn-danger", method: :post
+.container
+  .col-lg-6.col-lg-offset-3
+    %h1= game_card.game.complete_name
+    
+.row
+  .col-lg-6.col-lg-offset-3
+    %h4
+      = "Current team: #{game_card.team.name}"
+    .card
+      %h2.title= game_card.card.title
+      %ul 
+        - game_card.card.words.each do |word|
+          %li= word.value
+      .result-btn-group
+        = link_to "Good", next_round_path(result: 1), class: "btn btn-success", method: :post
+        = link_to "Bad", next_round_path(result: -1), class: "btn btn-danger", method: :post
+.result
+  %p= "#{current_game.team1.name}: #{pluralize(current_game.score_for(current_game.team1), 'point')}" 
+  %p= "#{current_game.team2.name}: #{pluralize(current_game.score_for(current_game.team2), 'point')}" 
