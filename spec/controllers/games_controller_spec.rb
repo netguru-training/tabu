@@ -28,8 +28,7 @@ describe GamesController do
       
     end
     context "empty" do
-
-      context "all fields"
+      context "all fields" do
         before do
           @game_params = {
             :team1_name => "",
