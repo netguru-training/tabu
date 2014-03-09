@@ -4,7 +4,7 @@ class Game < ActiveRecord::Base
 
   attr_accessor :team1_name, :team2_name
   
-  validates_presence_of :name, :team1, :team2
+  validates_presence_of :name
 
   def complete_name
     "#{team1.name} vs #{team2.name}"

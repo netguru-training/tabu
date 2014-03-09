@@ -2,8 +2,6 @@ class GamesController < ApplicationController
   expose :game, attributes: :game_attributes
   def create
 
-    # binding.pry
-    
     team1 = Team.new name: params[:game][:team1_name], game_id: game.id
     team2 = Team.new name: params[:game][:team2_name], game_id: game.id
 
