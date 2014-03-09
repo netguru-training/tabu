@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root :to => "games#new"
 
-  get 'results', to: 'games#results'
+  root :to => "games#new"
   
-  resources :games
+  resources :games do
+  	get :results
+  end
   match 'next_round', to: "game_cards#next_round", as: :next_round, via: [:get, :post]
 end

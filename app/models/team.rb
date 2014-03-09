@@ -3,8 +3,4 @@ class Team < ActiveRecord::Base
   belongs_to :game
 
   validates_presence_of :name
-
-  def score
-    game_cards.sum(:result)
-  end
 end
