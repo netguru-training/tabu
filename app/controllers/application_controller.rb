@@ -16,11 +16,19 @@ class ApplicationController < ActionController::Base
     Team.find session[:current_team_id]
   end
 
+  def last_game_card
+    GameCard.find session[:last_game_card_id]
+  end
+
   def set_current_team(team)
     session[:current_team_id] = team.id
   end
 
   def set_current_game(game)
     session[:current_game_id] = game.id
+  end
+
+  def set_last_game_card(game_card)
+    session[:last_game_card_id] = game_card.id 
   end
 end
