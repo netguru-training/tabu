@@ -6,6 +6,7 @@ class Game < ActiveRecord::Base
   
   validates_presence_of :name
 
+
   def complete_name
     "#{team1.name} vs #{team2.name}"
   end

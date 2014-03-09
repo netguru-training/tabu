@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => "hello#index"
+  root :to => "games#new"
 
   get 'results', to: 'games#results'
   
