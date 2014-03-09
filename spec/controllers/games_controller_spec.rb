@@ -20,6 +20,11 @@ describe GamesController do
           post :create, game: @game_params
           }.to change(Game.all, :count).by(1)
       end
+      it "should redirect to game/:id page" do
+        post :create, game: @game_params
+        response.should redirect_to game_path(controller.game)
+      end
+      
     end
     context "empty" do
       before do
@@ -32,12 +37,16 @@ describe GamesController do
       it "not adds two new teams" do
         expect {
           post :create, game: @game_params
-          }.to change(Team.all, :count).by(0)
+          }.not_to change(Team.all, :count).by(2)
       end
       it "not creates new game once" do
         expect {
           post :create, game: @game_params
-          }.to change(Game.all, :count).by(0)
+          }.not_to change(Game.all, :count).by(1)
+      end
+      it "should render new game form again" do
+        post :create, game: @game_params
+        response.body.should render_template("games/new")
       end
     end
   end

@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
 gem 'decent_exposure'
+
 group :development do 
   gem 'pry'
   gem 'better_errors'
@@ -21,5 +22,4 @@ group :development do
 end
 group :test do
   gem 'rspec-rails', '~> 2.0'
-  gem 'factory_girl_rails'
 end
