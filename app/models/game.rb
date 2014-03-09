@@ -10,4 +10,8 @@ class Game < ActiveRecord::Base
   def complete_name
     "#{team1.name} vs #{team2.name}"
   end
+
+  def score_for(team)
+   team.game_cards.sum(:result)
+  end
 end
