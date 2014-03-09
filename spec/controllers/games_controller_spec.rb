@@ -13,7 +13,7 @@ shared_examples_for 'valid' do
   end
   it "should redirect to game/:id page" do
     post :create, game: @game_params
-    response.should redirect_to game_path(controller.game)
+    response.should redirect_to next_round_path
   end
 end
 
@@ -69,9 +69,15 @@ describe GamesController do
         it_behaves_like 'invalid', true
       end
     end
-    context "One of team name field empty" do
+    context "First of team name fields empty" do
         before do
           @game_params[:team1_name] = ""
+        end
+        it_behaves_like 'invalid', true
+      end
+    context "Second of team name fields empty" do
+        before do
+          @game_params[:team2_name] = ""
         end
         it_behaves_like 'invalid', true
       end
