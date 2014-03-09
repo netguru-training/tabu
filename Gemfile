@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
 gem 'decent_exposure'
+gem 'devise'
 
 group :development, :test do 
   gem 'rspec-rails', '~> 2.0'
