@@ -10,7 +10,7 @@ class GamesController < ApplicationController
     game.team2 = team2
 
     if game.save
-      current_game= game
+      set_current_game game
       redirect_to game
     else
       render :new
