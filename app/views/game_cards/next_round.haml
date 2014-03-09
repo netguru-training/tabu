@@ -1,7 +1,9 @@
-%h1= game_card.card.title
-%ul 
-  - game_card.card.words.each do |word|
-    %li= word.value
-
-%button= link_to "Good", '#'
-%button= link_to "Bad", '#'
+.col-lg-3
+  .card
+    %h2.title= game_card.card.title
+    %ul 
+      - game_card.card.words.each do |word|
+        %li= word.value
+    .result-btn-group
+      %button.btn.btn-success= link_to "Good", '#'
+      %button.btn.btn-danger= link_to "Bad", '#'
