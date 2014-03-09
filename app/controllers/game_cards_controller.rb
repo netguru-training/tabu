@@ -4,7 +4,7 @@ class GameCardsController < ApplicationController
   def next_round
 
     game_card.game = current_game
-    # game_card.team = current_team
+    game_card.team = select_team
     game_card.card = sample_card
     if params[:result] == 1
       game_card.set_as_correct!
@@ -16,6 +16,12 @@ class GameCardsController < ApplicationController
   end
 
   private
+
+    def select_team
+      current_game.game_cards.count % 10 > 5 ? current_game.team1 : current_game.team2
+    end
+
+
     def sample_card
 
       Card.order("random()").to_a.delete_if { |c| current_game.game_cards.map(&:card_id).include? c.id }.first

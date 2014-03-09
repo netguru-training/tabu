@@ -6,6 +6,6 @@
       = current_game.team2.name
   %tr
     %td
-      = current_game.team1.score
+      = current_game.score_for(current_game.team1)
     %td
-      = current_game.team2.score
+      = current_game.score_for(current_game.team2)

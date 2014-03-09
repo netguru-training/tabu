@@ -18,6 +18,10 @@ development:
 
 test:
   <<: *default
+  host: localhost
+  user: tabu
+  password: tabu
+  database: tabu_development
 
 production:
   <<: *default

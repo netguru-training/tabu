@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
-  helper_method :current_game
+  helper_method :current_game, :current_team
+
   def current_game
   	Game.find session[:current_game_id]
   end
