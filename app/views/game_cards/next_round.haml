@@ -1,7 +1,7 @@
 .container
   .col-lg-6.col-lg-offset-3
     .card
-      %h2.title= game_card.card.title
+      %h2.title= game_card.card.title.upcase
       %ul 
         - game_card.card.words.each do |word|
           %li= word.value
