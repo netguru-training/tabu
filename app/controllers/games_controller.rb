@@ -1,15 +1,15 @@
 class GamesController < ApplicationController
   expose :game, attributes: :game_attributes
   def create
+
+    # binding.pry
     
-    team1 = Team.new name: params[:game][:team1_name]
-    team2 = Team.new name: params[:game][:team2_name]
+    team1 = Team.new name: params[:game][:team1_name], game_id: game.id
+    team2 = Team.new name: params[:game][:team2_name], game_id: game.id
 
-    game.team1 = team1
+    if %w(team1 team2 game).all? { |e| eval(e).valid? }
+      %w(team1 team2 game).each { |e| eval(e).save }
 
-    game.team2 = team2
-
-    if game.save
       set_current_game game
       redirect_to game
     else

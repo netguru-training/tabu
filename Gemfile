@@ -15,11 +15,9 @@ gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
 gem 'decent_exposure'
 
-group :development do 
+group :development, :test do 
+  gem 'rspec-rails', '~> 2.0'
   gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
-end
-group :test do
-  gem 'rspec-rails', '~> 2.0'
 end
