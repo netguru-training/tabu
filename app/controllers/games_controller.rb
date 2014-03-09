@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_filter :authenticate_user!
   expose :game, attributes: :game_attributes
   
   def create
