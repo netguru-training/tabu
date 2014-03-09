@@ -29,6 +29,9 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.0)
     atomic (1.1.15)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     builder (3.2.2)
@@ -132,6 +135,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 4.0.0)
   decent_exposure

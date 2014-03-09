@@ -12,8 +12,8 @@ default: &default
 development:
   <<: *default
   host: localhost
-  user: tabu
-  password: tabu
+  #user: changs
+  #password: tabu
   database: tabu_development
 
 test:

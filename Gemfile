@@ -16,4 +16,5 @@ gem 'spring',        group: :development
 gem 'decent_exposure'
 group :development do 
   gem 'pry'
+  gem 'better_errors'
 end
