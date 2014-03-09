@@ -2,14 +2,15 @@ require 'spec_helper'
 
 describe GamesController do
   describe "POST create" do
-    context "good params" do
-      before do
+    before do
         @game_params = {
           :team1_name => "Aaaby",
           :team2_name => "Bbbcz",
           :name => "Lorem ipsum"
           }
-      end
+    end
+    context "good params" do
+      
       it "adds two new teams" do
         expect {
           post :create, game: @game_params
@@ -27,26 +28,29 @@ describe GamesController do
       
     end
     context "empty" do
-      before do
-        @game_params = {
-          :team1_name => "",
-          :team2_name => "",
-          :name => ""
-          }
-      end
-      it "not adds two new teams" do
-        expect {
+
+      context "all fields"
+        before do
+          @game_params = {
+            :team1_name => "",
+            :team2_name => "",
+            :name => ""
+            }
+        end
+        it "not adds two new teams" do
+          expect {
+            post :create, game: @game_params
+            }.not_to change(Team.all, :count).by(2)
+        end
+        it "not creates new game once" do
+          expect {
+            post :create, game: @game_params
+            }.not_to change(Game.all, :count).by(1)
+        end
+        it "should render new game form again" do
           post :create, game: @game_params
-          }.not_to change(Team.all, :count).by(2)
-      end
-      it "not creates new game once" do
-        expect {
-          post :create, game: @game_params
-          }.not_to change(Game.all, :count).by(1)
-      end
-      it "should render new game form again" do
-        post :create, game: @game_params
-        response.body.should render_template("games/new")
+          response.body.should render_template("games/new")
+        end
       end
     end
   end
